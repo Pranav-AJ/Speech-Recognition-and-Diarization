@@ -11,8 +11,6 @@ import time
 
 # --- 1. ASR (sherpa-ncnn) Code ---
 
-# --- 1. ASR (sherpa-ncnn) Code ---
-
 def init_asr_recognizer():
     """Loads the ASR model. No Streamlit code here."""
     print("Loading ASR model (sherpa-ncnn)...")
@@ -56,9 +54,9 @@ def init_diarizer(num_speakers: int = -1, cluster_threshold: float = 0.5):
     """Loads the Diarization model."""
     print("Loading Diarization model (sherpa-onnx)...")
     segmentation_model = "./sherpa-onnx-pyannote-segmentation-3-0/model.onnx"
-    # !! IMPORTANT: Using your exact hardcoded path !!
+    
     embedding_extractor_model = (
-        "C:/Users/SEC/Desktop/Projects-github/Speech_Recognition/3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k.onnx"
+        "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k.onnx"
     )
 
     # Check if files exist
@@ -126,7 +124,7 @@ def run_diarization(sd, audio_samples, sample_rate):
     return output_lines
 
 
-# --- 3. Load Diarizer Globally (This one is OK) ---
+# --- 3. Load Diarizer Globally ---
 diarizer = init_diarizer()
 
 if diarizer is None:
@@ -226,4 +224,5 @@ if __name__ == "__main__":
     
     # Launch the app
     print("Launching Gradio app... Access it at the URL (e.g., http://127.0.0.1:7860)")
+
     iface.launch(share=True)
