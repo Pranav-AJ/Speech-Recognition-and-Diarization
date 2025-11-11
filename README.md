@@ -74,9 +74,10 @@ The pre-trained models are too large for this repository and must be downloaded 
 
   * **Embedding:** Download the `3dspeaker...onnx` file from [this Hugging Face repo](https://www.google.com/search?q=https://huggingface.co/ResumeMatch/3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k/blob/main/3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k.onnx) and place it in the root folder.
     *(Note: Your `app.py` script must have the correct file paths to these models).*
-```
+
 
 ### 5.Run the App
+
 ```bash
 python app.py
 ```
