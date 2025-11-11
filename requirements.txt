@@ -1,0 +1,6 @@
+gradio
+sherpa-ncnn
+sherpa-onnx
+librosa
+soundfile
+numpy
